@@ -3,12 +3,6 @@
  * @return
  */
 var fs = require('fs');
-var request = require('request');
-var cheerio = require('cheerio');
-var dateFormat = require('date-format-lite');
-var random = require('random-js')();
-var webshot = require('webshot');
-var Crawler = require("crawler");
 
 module.exports = Controller('Admin/BaseController', function() {
     'use strict';
