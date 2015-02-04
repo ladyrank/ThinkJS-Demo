@@ -67,7 +67,7 @@ module.exports = Controller('Admin/BaseController', function() {
                 });
             }
         },
-        //通用图片上传
+        //图片上传
         utilUploadImg: function(upImgName, upImgPath) {
             var extension = '';
             var finalFileName = '';

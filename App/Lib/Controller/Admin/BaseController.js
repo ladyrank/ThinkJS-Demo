@@ -13,7 +13,7 @@ module.exports = Controller(function() {
              * 其他的通用逻辑
              */
             //登录页面不检测
-            if (this.http.action === 'login' || this.http.action === 'register') {
+            if (this.http.action === 'login') {
                 return;
             }
 
