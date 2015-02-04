@@ -1,0 +1,24 @@
+{
+  "name": "app-starter",
+  "description": "project created by thinkjs",
+  "version": "0.1.0",
+  "author": {},
+  "dependencies": {
+    "thinkjs": "latest",
+    "cheerio": "latest",
+    "request": "latest",
+    "date-format-lite": "latest",
+    "random-js": "latest",
+    "webshot": "latest",
+	"crawler": "latest"
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "readmeFilename": "README.md"
+}

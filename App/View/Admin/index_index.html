@@ -1,0 +1,12 @@
+<% include ../partial/hd.html %>
+
+    <% if (user) { %>
+        <h4>当前登录用户：<%= user.name %>，<a href="logout">注销</a></h4>
+        <% } %>
+
+            <p><a href="/home/index/index">前台首页</a>
+            </p>
+            <p><a href="add?name=brand">新增品牌</a>
+            </p>
+
+            <% include ../partial/ft.html %>

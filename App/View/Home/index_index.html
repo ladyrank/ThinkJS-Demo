@@ -1,0 +1,35 @@
+<% include ../partial/hd.html %>
+
+    <h4><a href="/admin/index/index">后台首页</a></h4>
+
+    <div class="pg-index">
+        <table id="table" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <% if(isLogin){ %>
+                        <th>*</th>
+                        <% } %>
+                            <th>Name</th>
+                            <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% brand.forEach(function(b) { %>
+                    <tr>
+                        <% if(isLogin){ %>
+                            <td><a href="/admin/index/update?id=<%= b.id %>">修改</a> - <a href="/admin/index/del?id=<%= b.id %>">删除</a>
+                            </td>
+                            <% } %>
+                                <td>
+                                    <a target="_blank" href="<%= b.url %>">
+                                        <%=b .name %>
+                                    </a>
+                                </td>
+                                <td><img src="/upload/<%= b.img %>" alt="<%= b.name %>" />
+                                </td>
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+    </div>
+    <% include ../partial/ft.html %>
