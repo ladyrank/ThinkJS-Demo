@@ -170,7 +170,6 @@ module.exports = Controller('Admin/BaseController', function() {
                 //POST数据
                 var updateData = self.post();
                 var vBImg = self.file('img');
-                console.log(vBImg);
 
                 // 如果没有更改图片， 防止上传空文件
                 if (vBImg.originalFilename !== '') {
