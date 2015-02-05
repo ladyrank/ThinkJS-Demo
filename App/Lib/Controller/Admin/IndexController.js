@@ -3,6 +3,7 @@
  * @return
  */
 var fs = require('fs');
+var webshot = require('webshot');
 
 module.exports = Controller('Admin/BaseController', function() {
     'use strict';
@@ -180,6 +181,46 @@ module.exports = Controller('Admin/BaseController', function() {
                     }
                 });
             }
+        },
+        // 网页截图
+        screenAction: function() {
+            var self = this;
+            var url = self.post('url');
+            var imgName = url.replace(/http.*:\/\//g, '').replace(/[\/]|[\?]/g, '.');
+
+            if (self.isPost()) {
+                var options = {
+                    // 截图视窗宽度
+                    windowSize: {
+                        width: 1200
+                    },
+                    // 网页截图宽高：width = all 会继承windowSize的设置，height = all表示截取完整网页
+                    shotSize: {
+                        width: 'all',
+                        height: 'all'
+                    },
+                    streamType: 'png',
+                    // 渲染完成后延迟一秒截图
+                    renderDelay: 1000,
+                    timeout: 20000,
+                    defaultWhiteBackground: true
+                };
+
+                // 开始截图， 图片保存到 / www / screen / 下
+                webshot(url, 'screen/' + imgName + '.' + options.streamType, options, function(err) {
+                    if (err == null) {
+                        self.success('截图成功');
+                    } else {
+                        self.error('截图失败');
+                    }
+                });
+            } else {
+                self.assign({
+                    'title': '网页截图'
+                });
+                self.display();
+            }
+
         }
     };
 });
