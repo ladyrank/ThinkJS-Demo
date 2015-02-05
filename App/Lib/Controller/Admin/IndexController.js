@@ -206,7 +206,7 @@ module.exports = Controller('Admin/BaseController', function() {
                     defaultWhiteBackground: true
                 };
 
-                // 开始截图， 图片保存到 / www / screen / 下
+                // 开始截图， 图片保存到/www/screen/ 下
                 webshot(url, 'screen/' + imgName + '.' + options.streamType, options, function(err) {
                     if (err == null) {
                         self.success('截图成功');
